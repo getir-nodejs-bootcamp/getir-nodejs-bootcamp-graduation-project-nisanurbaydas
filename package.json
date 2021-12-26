@@ -1,0 +1,30 @@
+{
+  "name": "getir-nodejs-bootcamp-graduation-project-nisanurbaydas-main",
+  "version": "1.0.0",
+  "description": "RESTful API for graduation project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getir-nodejs-bootcamp/getir-nodejs-bootcamp-graduation-project-nisanurbaydas.git"
+  },
+  "author": "Nisa Nur Baydaş",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/getir-nodejs-bootcamp/getir-nodejs-bootcamp-graduation-project-nisanurbaydas/issues"
+  },
+  "homepage": "https://github.com/getir-nodejs-bootcamp/getir-nodejs-bootcamp-graduation-project-nisanurbaydas#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "prettier": "2.5.1"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "http-status": "^1.5.0",
+    "mongoose": "^6.1.3"
+  }
+}
