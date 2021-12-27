@@ -25,7 +25,7 @@ const accessLogStream = fs.createWriteStream(path.join(__dirname,"logs/network",
 //setup logger
 app.use(morgan("combined", {stream: accessLogStream}));
 
-app.listen(process.env.APP_PORT, () => {
+app.listen(process.env.PORT || process.env.APP_PORT, () => {
   console.log('Server is up!');
   app.use('/records', RecordRoutes);
   
