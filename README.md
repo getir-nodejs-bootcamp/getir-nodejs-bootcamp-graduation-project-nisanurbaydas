@@ -1,26 +1,71 @@
 # Getir Node.js Bootcamp Graduation Project
-## The Challenge
-We’d like you to create a RESTful API with a single endpoint that fetches the data in the provided MongoDB collection and return the results in the requested format.
-Requirements
-- The code should be written in Node.js using express framework
-- The endpoint should just handle HTTP POST requests.
-- The application should be deployed on AWS or Heroku. You don’t need to use any API Gateway, Load Balancers or any other layer than the developed application.
-- The up to date repo should be publicly available in Github, Bitbucket or equivalent.
+A RESTful API with a single endpoint that fetches the data in the provided MongoDB collection and return the results in the requested format.
 
-## Deliverables
-- The public repo URL which has the source code of the project, and a set of instructions if there is any project specific configurations needed to run the project.
-- The public endpoint URL of the deployed API which is available for testing.
+## Getting Started
+Clone the repo:
 
-## Worth Highlighting
-We expect these requirements can be delivered in 3 to 6 hours. However, it is not a speed test. Take your time! Your feedback on how much actual time you were needed to deliver the task will be very helpful but will not be used for the evaluation.
-You are free to use any libraries to deliver the needed functionality, but be prepared to explain other solutions that you would have implemented if you have more time.
+```
+git clone https://github.com/nisanurbaydas/getir-nodejs-bootcamp-graduation-project-nisanurbaydas.git
+cd getir-nodejs-bootcamp-graduation-project-nisanurbaydas
+```
+Install the dependencies:
 
-## Crucial Points
-- Delivering a Working RESTful API.
-- Clean and Production Ready Code
-- Error Handling
-- Comments and Documentation
-- Unit and/or Integration Tests (Jest is preferable but Mocha also works)
-- Avoid Over Engineering
+```
+npm install
+```
+To start project:
+```
+npm start
+```
+To run test:
+```
+npm run test
+```
+## Project Structure
+```
+src\
+ |--config\         # configuration related things
+ |--controllers\    # Route controllers (controller layer)
+ |--loaders\    # Db connection
+ |--logs\           # Log files
+ |--middlewares\     # Custom express middleware (Error handling and Validations)
+ |--models\         # Mongoose models (data layer)
+ |--routes\         # Routes
+ |--services\       # Business logic (service layer)
+ |--test\          # Testing frameworks
+ |--validations\    # Request data validation schemas
+ |--app.js          # Express app
+ ```
+## API Documentation
+### API Endpoints
+List of available routes:
+````
+POST /records - my records
+````
+ Request Parameters:
+ |  Parameters | Type  | Description   |
+| ------------ | ------------ | ------------ |
+|  startDate |  String | Should be in YYYY-MM-DD format  |
+|  endDate | String  | Should be in YYYY-MM-DD format  |
+|  minCount | Number  | Minimum count for filtering  |
+|  maxCount |  Number |  Maximum count for filtering |
 
-Good luck with this assignment! Try to make good use of this task to demonstrate and show off your coding skills. If you have any questions, don’t hesitate to ask your contact person within Getir.
+## Validation
+Request data is validated using Joi. Check the documentation for more details on how to write Joi validation schemas.
+
+The validation schemas are defined in the src/validations directory and are used in the routes by providing them as parameters to the validate middleware.
+
+## Logging
+Write logs to logs/network/access.log with morgan. In app.js:
+
+```
+const path = require('path');
+const fs = require('fs');
+const morgan = require('morgan');
+
+const accessLogStream = fs.createWriteStream(path.join(__dirname,"logs/network","access.log"), {flags: 'a'});
+app.use(morgan("combined", {stream: accessLogStream}));
+
+```
+### HEROKU URL
+https://getir-graduation-case.herokuapp.com/records
