@@ -1,4 +1,4 @@
-#Projct in master branch
+# Project in master branch
 # Getir Node.js Bootcamp Graduation Project
 ## The Challenge
 We’d like you to create a RESTful API with a single endpoint that fetches the data in the provided MongoDB collection and return the results in the requested format.
