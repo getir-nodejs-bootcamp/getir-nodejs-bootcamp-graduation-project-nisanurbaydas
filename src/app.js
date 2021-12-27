@@ -28,7 +28,12 @@ app.use(morgan("combined", {stream: accessLogStream}));
 app.listen(process.env.APP_PORT, () => {
   console.log('Server is up!');
   app.use('/records', RecordRoutes);
+  
 
+  //error handle for ep that doesn't exist
+  /*
+  @params(req: Request Object, res: Response, next: callback function)
+  */
   app.use((req, res, next) => {
     const error = new Error('No such endpoint');
     error.status = 404;
@@ -37,3 +42,5 @@ app.listen(process.env.APP_PORT, () => {
 
   app.use(errorHandler);
 });
+
+module.exports = app;

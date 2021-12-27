@@ -4,7 +4,7 @@
   "description": "RESTful API for graduation project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon src/app.js"
   },
   "repository": {
@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/getir-nodejs-bootcamp/getir-nodejs-bootcamp-graduation-project-nisanurbaydas#readme",
   "devDependencies": {
+    "jest": "^27.4.5",
     "nodemon": "^2.0.15",
-    "prettier": "2.5.1"
+    "prettier": "2.5.1",
+    "supertest": "^6.1.6"
   },
   "dependencies": {
     "@joi/date": "^2.1.0",

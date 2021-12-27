@@ -1,6 +1,13 @@
 const Record = require('../models/Record');
 
+
+/*
+get filtered data with aggregation
+*/ 
 const list = (data) => {
+  /*
+  find( {for filtering based on the aggregation}, {for seleccting the fields})
+  */
   return Record.find({
     $expr: {
       $and: [

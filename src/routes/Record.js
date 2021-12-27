@@ -6,7 +6,7 @@ const express = require("express");
 
 
 const router = express.Router();
-
+ 
 router.post("/",validate(getFilteredRecords,"body"), index);
 
 module.exports = router;
