@@ -67,6 +67,7 @@ const accessLogStream = fs.createWriteStream(path.join(__dirname,"logs/network",
 app.use(morgan("combined", {stream: accessLogStream}));
 
 ```
-### Deploy edilen proje linki
+### Deployed project 
 https://github.com/nisanurbaydas/getir-nodejs-bootcamp-graduation-project-nisanurbaydas
+
 https://getir-graduation-case.herokuapp.com/records
