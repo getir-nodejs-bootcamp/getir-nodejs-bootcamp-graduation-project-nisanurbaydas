@@ -5,7 +5,7 @@ A RESTful API with a single endpoint that fetches the data in the provided Mongo
 Clone the repo:
 
 ```
-git clone https://github.com/nisanurbaydas/getir-nodejs-bootcamp-graduation-project-nisanurbaydas.git
+git clone https://github.com/getir-nodejs-bootcamp/getir-nodejs-bootcamp-graduation-project-nisanurbaydas.git
 cd getir-nodejs-bootcamp-graduation-project-nisanurbaydas
 ```
 Install the dependencies:
